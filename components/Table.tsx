@@ -14,8 +14,7 @@ export default function LeaderBoard() {
     const [data, setData] = useState(undefined as unknown as Score[]);
     useEffect
     (() => {
-        fetch('https://eshapeapi.geo-wiki.org/leaderboard').then(r => r.json()).then(data => {
-            console.log(data);
+        fetch('https://eshapeapi.geo-wiki.org/leaderboard').then(r => r.json()).then(data => {            
             setData(data);
         })
     }, [])
