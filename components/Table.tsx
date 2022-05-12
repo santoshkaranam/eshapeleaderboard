@@ -34,11 +34,11 @@ export default function LeaderBoard() {
     return (
         <div className="px-4 sm:px-6 lg:px-8 ">
             <div className="sm:flex sm:items-center ">
-                <div className="sm:flex-auto pt-12 items-center justify-center text-center " >
-                    <h1 className="text-2xl text-center font-semibold text-gray-900 shadow bg-white opacity-75 w-2/3 rounded-lg"><a className="underline"
-                        href='https://cropobserve.org/'>CropObserve</a> Leader Board</h1>
+                <div className="sm:flex-auto pt-12 items-center justify-center text-center w-2/3 " >
+                    <h1 className="text-2xl pt-1 text-center font-semibold text-gray-900 shadow bg-white opacity-75 rounded-l-lg"><a className="underline"
+                        href='https://cropobserve.org/'>CropObserve</a> Leader Board</h1>                    
                 </div>
-                <div className="mt-8 sm:mt-0 sm:ml-16 sm:flex-none bg-white opacity-75 rounded-lg">
+                <div className="mt-12 text-right  bg-white opacity-75 rounded-r-lg justify-end">
                     <span className="px-2" >Surveys:{data!==undefined?data.reduce((sum, current) => sum + current.surveyCount, 0):0}</span>
                     <span className="pr-2" >Images:{data!==undefined?data.reduce((sum, current) => sum + current.totalImagesUploadedCount, 0):0}</span>
                     <span className="pr-2" >Users:{data!==undefined?data.reduce((sum) => sum + 1, 0):0}</span>
@@ -51,7 +51,7 @@ export default function LeaderBoard() {
                     </button>
                 </div>
             </div>
-            <div className="py-8 flex flex-col  ">
+            <div className="pt-8 flex flex-col  ">
                 <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                         <div className="overflow-hidden shadow ring-1 ring-black  md:rounded-lg ">
@@ -92,7 +92,7 @@ export default function LeaderBoard() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>            
         </div>
     )
 }
