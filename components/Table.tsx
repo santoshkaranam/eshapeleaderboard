@@ -35,15 +35,18 @@ export default function LeaderBoard() {
     return (
         <div className="px-4 sm:px-6 lg:px-8 ">
             <div className="sm:flex sm:items-center ">
-                <div className="sm:flex-auto pt-12 " >
-                    <h1 className="text-2xl text-center font-semibold text-gray-900"><a
+                <div className="sm:flex-auto pt-12 items-center justify-center text-center " >
+                    <h1 className="text-2xl text-center font-semibold text-gray-900 shadow bg-white opacity-75 w-2/3 rounded-lg"><a className="underline"
                         href='https://cropobserve.org/'>CropObserve</a> Leader Board</h1>
                 </div>
-                <div className="mt-12 sm:mt-0 sm:ml-16 sm:flex-none">
+                <div className="mt-8 sm:mt-0 sm:ml-16 sm:flex-none bg-white opacity-75 rounded-lg">
+                    <span className="px-2" >Surveys:{data!==undefined?data.reduce((sum, current) => sum + current.surveyCount, 0):0}</span>
+                    <span className="pr-2" >Images:{data!==undefined?data.reduce((sum, current) => sum + current.totalImagesUploadedCount, 0):0}</span>
+                    <span className="pr-2" >Users:{data!==undefined?data.reduce((sum) => sum + 1, 0):0}</span>
                     <button
                         onClick={downloadCsv}
                         type="button"
-                        className="inline-flex rounded-lg items-center justify-center rounded-md border border-transparent bg-yellow-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:w-auto"
+                        className="inline-flex rounded-r-lg items-center justify-center rounded-md border border-transparent bg-yellow-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:w-auto"
                     >
                         Download csv
                     </button>
@@ -52,7 +55,7 @@ export default function LeaderBoard() {
             <div className="py-8 flex flex-col  ">
                 <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                        <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg ">
+                        <div className="overflow-hidden shadow ring-1 ring-black  md:rounded-lg ">
                             <table className="min-w-full divide-y divide-gray-300  bg-white opacity-75">
                                 <thead className="px-3 py-4">
                                 <tr>
